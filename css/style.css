@@ -1,0 +1,222 @@
+
+html {
+    position: relative;
+    min-height: 100%;
+    color: #555555;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #e9ebee;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+#main {
+}
+
+body > .container {
+    padding: 60px 15px 0;
+}
+
+.container .text-muted {
+    margin: 20px 0;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+code {
+    font-size: 80%;
+}
+
+/* Post */
+.post {
+    position: relative;
+    color: #333;
+}
+
+a.posturl:hover {
+    text-decoration: none;
+}
+
+.post .panel-heading .time {
+    color: #90949c;
+    font-size: 12px;
+}
+
+.post .panel-thumbnail {
+    margin-top: 10px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1) inset, 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.post .panel-thumbnail img {
+    width: 100%;
+}
+
+.post .panel-thumbnail .description {
+    padding: 10px 12px;
+}
+
+.post .panel-thumbnail .description .title {
+    font-family: Georgia, serif;
+    letter-spacing: normal;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 5px;
+    max-height: 110px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.post .panel-thumbnail .description .link {
+    padding-top: 9px;
+    font-size: 11px;
+    line-height: 11px;
+    text-transform: uppercase;
+    color: #90949c;
+}
+
+.post .panel-thumbnail .description .text {
+    line-height: 16px;
+    max-height: 80px;
+    overflow: hidden;
+    font-size: 12px;
+    word-wrap: break-word;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.post ins {
+    color: green;
+    background: #dfd;
+    text-decoration: none;
+}
+
+.post del {
+    color: red;
+    background: #fdd;
+    text-decoration: none;
+}
+
+.post.deleted {
+    border-color: #ff2632;
+}
+
+.deletedinfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.deletedinfo span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #ff2632;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 0px 0px 1px #fff;
+}
+
+.comments {
+    overflow-y: auto;
+}
+
+.comments ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.comments ul li {
+    margin: 0 12px;
+    padding: 8px 0;
+    color: rgb(29, 33, 41);
+    direction: ltr;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 16.0833px;
+    overflow-wrap: break-word;
+}
+
+.comments li .likes {
+    margin: 0 5px 0 5px;
+    font-weight: bold;
+}
+
+.comments li .likes i {
+    font-size: 120%;
+    background: rgb(64, 128, 255);
+    border-radius: 8px;
+    width: 15px;
+    height: 15px;
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1px;
+    float: left;
+}
+
+#content .mix {
+    display: none;
+}
+
+
+
+.spinner {
+    margin: 100px auto 0;
+    width: 70px;
+    text-align: center;
+}
+
+.spinner > div {
+    width: 18px;
+    height: 18px;
+    background-color: #333;
+
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    } 40% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+      }
+}

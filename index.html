@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FPÖ Watch</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.mixitup.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+        $(function () {
+            $.get("content.html", function (data) {
+                $("#content")
+                    .html(data)
+                    .mixItUp({
+                        controls: {
+                            toggleFilterButtons: true
+                        },
+                        load: {
+                            filter: '.deleted, .edited'
+                        },
+                        layout: {
+                            containerClassFail: 'empty'
+                        },
+                        callbacks: {
+                            onMixEnd: function (state) {
+                                if (state.totalShow == 0) {
+                                    $('#nocontent').show();
+                                } else {
+                                    $('#nocontent').hide();
+                                }
+                            }
+                        }
+                    });
+            }).fail(function () {
+                $('#errorloading').show();
+            }).always(function () {
+                $('#loading').hide();
+            });
+            ;
+        });
+    </script>
+</head>
+<body>
+
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand active" href="">FPÖWATCH</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="wie.html">Wie</a></li>
+                <li><a href="was.html">Was</a></li>
+                <li><a href="warum.html">Warum</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<!-- Begin page content -->
+<div class="container" id="main">
+    <div class="page-header">
+        Anzeigen:
+        <div class="btn-group btn-group-lg" role="group" aria-label="Ergebnis filtern">
+            <button type="button" onclick="this.blur();" class="btn btn-default filter" data-filter=".deleted">Gelöschte Beiträge</button>
+            <button type="button" onclick="this.blur();" class="btn btn-default filter" data-filter=".edited">Editierte Beiträge</button>
+            <button type="button" onclick="this.blur();" class="btn btn-default filter" data-filter=".comments">mit gelöschten Komentaren
+            </button>
+        </div>
+    </div>
+    <div id="loading" class="text-center">
+        <div class="spinner">
+            <!-- http://tobiasahlin.com/spinkit/ -->
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <div id="nocontent" style="display: none;">
+        <div class="alert alert-warning" role="alert">
+            <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+            Bitte wählen Sie welche Art von Beiträgen angezeigt werden soll
+        </div>
+    </div>
+    <div id="content">
+    </div>
+    <div id="errorloading" style="display: none;">
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+            Beiträge konnten nicht geladen werden!
+        </div>
+    </div>
+</div>
+
+<!--<footer class="footer">-->
+<!--    <div class="container">-->
+<!--        <p class="text-muted"></p>-->
+<!--    </div>-->
+<!--</footer>-->
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('.deletedinfo').click(function () {
+            $(this).remove();
+        });
+    });
+</script>
+</body>
+</html>

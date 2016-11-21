@@ -38,6 +38,62 @@ code {
     font-size: 80%;
 }
 
+/* Header */
+@media (min-width: 768px) {
+    .navbar-nav > li > a {
+        padding-top: 20px;
+    }
+
+    a.navbar-brand {
+        height: 55px;
+    }
+}
+
+.navbar-default {
+    border: none;
+    margin: 0;
+    min-height: 0;
+    box-shadow: 0 10px 10px -10px #585858;
+    -webkit-box-shadow: 0 10px 10px -10px #585858;
+    -moz-box-shadow: 0 10px 10px -10px #585858;
+    color: #fff;
+    background: #0056a2;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+    background-color: #006ec4;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+    color: #ffffff;
+    background-color: #0060b1;
+}
+
+a.navbar-brand:hover:hover,
+a.navbar-brand:hover:focus {
+    background-color: #0060b1;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #fff;
+}
+.navbar-default .navbar-toggle:hover .icon-bar {
+    background-color: #0056a2;
+}
+
+
 /* Post */
 .post {
     position: relative;
@@ -51,6 +107,10 @@ a.posturl:hover {
 .post .panel-heading .time {
     color: #90949c;
     font-size: 12px;
+}
+
+.post .panel-body p {
+    overflow-x: hidden;
 }
 
 .post .panel-thumbnail {

@@ -14,8 +14,8 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 60px;
-    background-color: #f5f5f5;
+    background-color: #fff;
+    padding: 4px;
 }
 
 #main {
@@ -58,10 +58,6 @@ a.posturl:hover {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .1) inset, 0 1px 1px rgba(0, 0, 0, .05);
 }
 
-.post .panel-thumbnail img {
-    width: 100%;
-}
-
 .post .panel-thumbnail .description {
     padding: 10px 12px;
 }
@@ -84,6 +80,7 @@ a.posturl:hover {
     line-height: 11px;
     text-transform: uppercase;
     color: #90949c;
+    overflow: hidden;
 }
 
 .post .panel-thumbnail .description .text {
@@ -95,13 +92,13 @@ a.posturl:hover {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-.post ins {
+.post ins, .textinserted {
     color: green;
     background: #dfd;
     text-decoration: none;
 }
 
-.post del {
+.post del, .textdeleted {
     color: red;
     background: #fdd;
     text-decoration: none;
@@ -134,16 +131,16 @@ a.posturl:hover {
     text-shadow: 0px 0px 1px #fff;
 }
 
-.comments {
+.commentsbox {
     overflow-y: auto;
 }
 
-.comments ul {
+.commentsbox ul {
     list-style: none;
     padding-left: 0px;
 }
 
-.comments ul li {
+.commentsbox ul li {
     margin: 0 12px;
     padding: 8px 0;
     color: rgb(29, 33, 41);
@@ -154,30 +151,29 @@ a.posturl:hover {
     overflow-wrap: break-word;
 }
 
-.comments li .likes {
-    margin: 0 5px 0 5px;
+.commentsbox .name {
+    font-style: italic;
     font-weight: bold;
 }
 
-.comments li .likes i {
+.likes {
+    font-weight: bold;
+    display: inline-block;
+}
+
+.likes i {
     font-size: 120%;
     background: rgb(64, 128, 255);
     border-radius: 8px;
     width: 15px;
     height: 15px;
-    display: block;
+    display: inline-block;
     color: white;
     font-weight: bold;
     text-align: center;
     padding-top: 1px;
-    float: left;
+    vertical-align: middle;
 }
-
-#content .mix {
-    display: none;
-}
-
-
 
 .spinner {
     margin: 100px auto 0;
@@ -207,16 +203,21 @@ a.posturl:hover {
 }
 
 @-webkit-keyframes sk-bouncedelay {
-    0%, 80%, 100% { -webkit-transform: scale(0) }
-    40% { -webkit-transform: scale(1.0) }
+    0%, 80%, 100% {
+        -webkit-transform: scale(0)
+    }
+    40% {
+        -webkit-transform: scale(1.0)
+    }
 }
 
 @keyframes sk-bouncedelay {
     0%, 80%, 100% {
         -webkit-transform: scale(0);
         transform: scale(0);
-    } 40% {
-          -webkit-transform: scale(1.0);
-          transform: scale(1.0);
-      }
+    }
+    40% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
 }
